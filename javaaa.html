@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obliczanie pola trójkąta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input,
+        button {
+            margin: 10px 0;
+            padding: 5px;
+        }
+
+        #wynik {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Obliczanie pola trójkąta</h1>
+    <p>Podaj długości boków trójkąta:</p>
+    <form id="trojkatForm">
+        <label for="a">Bok a:</label>
+        <input type="number" id="a" required><br>
+        <label for="b">Bok b:</label>
+        <input type="number" id="b" required><br>
+        <label for="c">Bok c:</label>
+        <input type="number" id="c" required><br>
+        <button type="button" onclick="obliczTrojkat()">Oblicz</button>
+    </form>
+    <p id="wynik"></p>
+
+    <script>
+        function obliczTrojkat() {
+
+
+            const a = parseFloat(document.getElementById("a").value);
+            const b = parseFloat(document.getElementById("b").value);
+            const c = parseFloat(document.getElementById("c").value);
+
+
+            if (a + b > c && a + c > b && b + c > a) {
+
+                const p = (a + b + c) / 2;
+                const pole = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+                document.getElementById("wynik").innerText =
+                    `Pole trójkąta wynosi: ${pole.toFixed(2)}`;
+            } else {
+
+                document.getElementById("wynik").innerText =
+                    "Z podanych boków nie można utworzyć trójkąta!";
+            }
+        } 
+    </script>
+</body>
+
+</html>
