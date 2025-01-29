@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col">
+            <h3 id="slowo">storm spirit</h3>
+            <button id="but" onclick="zmień()">zmień</button>
+        </div>
+    </div>
+    <script>
+        function zmień() {
+    var slowo = document.getElementById('slowo');
+    var lolikText = slowo.innerText;
+    var b = ("storm spirit");
+    var a = ("sporm stirit");
+    if (lolikText === b) {
+        slowo.innerText = a;
+    } else if (lolikText === a) {
+        slowo.innerText = b;
+    }
+}
+    </script>
+</body>
+</html>
