@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col">
+            <input type="text" placeholder="towoe slowo" id="text">
+            <button onclick="text()">Sparwdz</button>
+        </div>
+        <h3 id="texttrue">slowo:</h3>
+    </div>
+</div>
+<script>
+    function text() {
+    var a = document.getElementById('text').value;
+    if (a.length >= 6) {
+        if (a.endsWith("kot")) {
+            var textCont = document.getElementById('texttrue')
+            textCont.innerText = "slowo: ma 6 symwol i ma na koncu slowo kot";
+        } else {
+            var textCont = document.getElementById('texttrue')
+            textCont.innerText = "slowo: ma 6 symwol ale nie ma na koncu slowo kot";
+        }
+    } else {
+        if (a.endsWith("kot")) {
+            var textCont = document.getElementById('texttrue')
+            textCont.innerText = "slowo: nie ma 6 symwol ale ma na koncu slowo kot";
+        } else {
+            var textCont = document.getElementById('texttrue')
+            textCont.innerText = "slowo: nie ma 6 symwol i nie ma na koncu slowo kot";
+        }
+    }
+}
+</script>
+</body>
+</html>
